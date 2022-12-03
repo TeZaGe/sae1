@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+
+typedef struct Objet {
+    char nom[20];
+    float prix;
+
+} objet;
+
+void init1(objet O){
+
+    printf("\nLe nom de l'objet ?\n");scanf("%s",O.nom);
+    printf("\nLe prix de l'objet ?\n");scanf("%f",&(O.prix));
+    printf("\n");
+}
+
+
+void init2(objet *O){
+
+
+    printf("\nLe nom de l'objet ?\n");scanf("%s",O->nom);
+    printf("\nLe prix de l'objet ?\n");scanf("%f",&(O->prix));
+
+
+}
+
+
+   void affiche(objet O){
+
+       printf("\nl'objet %s est au prix de %.2f euros", O.nom, O.prix);
+
+       printf(" \n");
+
+   }
+int main()
+{
+
+        objet thing;
+
+
+    init1(thing);
+    affiche(thing);
+
+    init2(&thing);
+    affiche(thing);
+
+    printf("\n");
+
+
+    return 0;
+}
